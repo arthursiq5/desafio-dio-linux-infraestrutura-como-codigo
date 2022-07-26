@@ -30,4 +30,15 @@ useradd amanda -m -s /bin/bash -p $(openssl passwd -crypt qwe123) -G GRP_SEC
 useradd rogerio -m -s /bin/bash -p $(openssl passwd -crypt qwe123) -G GRP_SEC
 
 echo "Usuários criados!"
+echo "Especificando permissões dos diretórios..."
 
+chown root:GRP_ADM /adm
+chown root:GRP_VEN /ven
+chown root:GRP_SEC /sec
+
+chmod 770 /adm
+chmod 770 /ven
+chmod 770 /sec
+chmod 777 /publico
+
+echo "Definidas permissões"
